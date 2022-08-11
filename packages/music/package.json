@@ -1,0 +1,9 @@
+{
+  "name": "music",
+  "packageManager": "yarn@3.1.1",
+  "devDependencies": {
+    "jest": "^27.4.7",
+    "tsc": "^2.0.3",
+    "tsm": "^2.2.1"
+  }
+}
