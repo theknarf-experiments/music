@@ -1,0 +1,63 @@
+.pianoroll {
+	display: flex;
+	height: 150px;
+	background: grey;
+	font-size: 12px;
+	padding-bottom: 5px;
+}
+
+.key {
+	width: 50px;
+	height: 100%;
+	margin: 0;
+	margin-right: 2px;
+	background: #fefefe;
+	border: 1px solid grey;
+	border-bottom-left-radius: 4px;
+	border-bottom-right-radius: 4px;
+	display: flex;
+	color: black;
+	z-index: 90;
+}
+
+.key.black {
+	width: 35px;
+	height: 60%;
+	background: #444;
+	color: white;
+	margin-left: -20px;
+	margin-right: -17px;
+	z-index: 99;
+}
+
+.key > span {
+	align-self: flex-end;
+	text-align: center;
+	width: 100%;
+	padding-bottom: 5px;
+}
+
+.interactive .key {
+	cursor: pointer;
+}
+
+.interactive .key:hover {
+	background: #eeefff;
+}
+
+.interactive .key.black:hover {
+	background: #00000f;
+}
+
+.key.highlight {
+/*	background: #3e3f6f !important;
+	color: white;*/
+}
+
+.modeLabel {
+	background: blue;
+	color: white;
+	border-radius: 5px;
+	padding: 2px;
+	margin: 1px;
+}

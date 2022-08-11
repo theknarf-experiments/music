@@ -1,0 +1,7 @@
+{
+  "name": "music-root",
+  "packageManager": "yarn@3.1.1",
+  "workspaces": [
+    "packages/*"
+  ]
+}
