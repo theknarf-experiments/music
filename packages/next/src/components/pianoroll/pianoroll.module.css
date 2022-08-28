@@ -5,14 +5,14 @@
 
 .pianoroll {
 	display: flex;
-	height: 150px;
+	height: 200px;
 /*	background: grey; */
 	font-size: 12px;
 	padding-bottom: 5px;
 }
 
 .key {
-	width: 50px;
+	width: 60px;
 	height: 100%;
 	margin: 0;
 	margin-right: 2px;
@@ -26,11 +26,11 @@
 }
 
 .key.black {
-	width: 35px;
+	width: 40px;
 	height: 60%;
 	background: #444;
 	color: white;
-	margin-left: -20px;
+	margin-left: -26px;
 	margin-right: -17px;
 	z-index: 99;
 }
@@ -74,7 +74,7 @@
 .attachedLabel > * {
 	position: relative;
 	color: black;
-	top: 160px;
+	top: 220px;
 }
 
 .attachedLabel.black > * {

@@ -26,9 +26,9 @@ function App() {
 		<div>
 			<h1>Compose</h1>
 			<div>
-				<h2>Pick a key (in either major or minor)</h2>
 				<div>
-					<span>Choosen key: {Midi.midiToNoteName(key)}</span>
+					Pick a key (in either major or minor).
+					Choosen key: {Midi.midiToNoteName(key)}.
 				</div>
 				<div>
 					<span>Chose Major or minor:</span>
