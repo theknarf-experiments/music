@@ -1,7 +1,12 @@
+.pianorollWrapper {
+	margin-top: 50px;
+	margin-bottom: 80px;
+}
+
 .pianoroll {
 	display: flex;
 	height: 150px;
-	background: grey;
+/*	background: grey; */
 	font-size: 12px;
 	padding-bottom: 5px;
 }
@@ -60,4 +65,18 @@
 	border-radius: 5px;
 	padding: 2px;
 	margin: 1px;
+}
+
+.attachedLabel {
+	position: absolute;
+}
+
+.attachedLabel > * {
+	position: relative;
+	color: black;
+	top: 160px;
+}
+
+.attachedLabel.black > * {
+	top: -50px;
 }

@@ -39,7 +39,7 @@ function App() {
 				</div>
 			</div>
 
-			<div>
+			<div style={{ marginTop: '80px' }}>
 				<PianoRoll
 					noteRange={{ first: firstNote, last: lastNote }}
 					onClick={(midiNumber) => {
@@ -51,8 +51,23 @@ function App() {
 							return Note.midi(`${note}${octave}`)
 						}).indexOf(midi)
 
-						if(keyInfo !== null && i !== null) {
+						if(keyInfo !== null && i !== null && keyInfo.grades[i]) {
 							return keyInfo.grades[i];
+						}
+
+						return false;
+					}}
+					attachedLabel={(midi) => {
+						const octave = Note.octave(Note.fromMidi(midi));
+						const i = keyInfo?.scale.map((note) => {
+							return Note.midi(`${note}${octave}`)
+						}).indexOf(midi)
+
+						if(keyInfo !== null && i !== null && keyInfo.chords[i]) {
+							return <div>
+								<div>{keyInfo.chords[i]}</div>
+								<ModeLabel>{keyInfo.chordScales[i]}</ModeLabel>
+							</div>;
 						}
 
 						return false;
@@ -60,11 +75,11 @@ function App() {
 					/>
 				<div>
 				{
-					keyInfo?.grades.map((grade, i) => (
+					/*keyInfo?.grades.map((grade, i) => (
 						<div key={i}>
 							{grade}, {keyInfo.chords[i]} <ModeLabel>{keyInfo.chordScales[i]}</ModeLabel>
 						</div>
-					))
+					))*/
 				}
 				</div>
 			</div>
