@@ -2,11 +2,25 @@ import { useState, useMemo } from 'react';
 import { Key, Note, Midi } from "@tonaljs/tonal";
 import css from '../src/components/pianoroll/pianoroll.module.css';
 import PianoRoll from '../src/components/pianoroll/pianoroll.tsx';
+import css2 from '../src/components/box/box.module.css';
 
 const ModeLabel : React.FC = ({children}) => {
 	return <span className={css.modeLabel}>
 	{children}
 	</span>;
+}
+
+const Box : React.FC<{
+	title: string,
+	position?: { x: number, y: number },
+}> = ({ title, position, children }) => {
+	return <div
+		className={css2.box}
+		style={{ top: `${position?.y || 0}px`, left: `${position?.x || 0}px` }}
+		>
+		<h2>{title}</h2>
+	{children}
+	</div>
 }
 
 function App() {
@@ -73,18 +87,24 @@ function App() {
 						return false;
 					}}
 					/>
-				<div>
-				{
-					/*keyInfo?.grades.map((grade, i) => (
-						<div key={i}>
-							{grade}, {keyInfo.chords[i]} <ModeLabel>{keyInfo.chordScales[i]}</ModeLabel>
-						</div>
-					))*/
-				}
-				</div>
 			</div>
 			<h2>Pick chord progression</h2>
 			<div>- Show the XState diagram for composing a cord progression based on functional harmonic progression</div>
+			<div className={css2.boxWrapper}>
+				<Box title="Tonic" position={{ x: 50, y: 50 }}>
+					<button>I</button>
+					<button>vi</button>
+					<button>iii</button>
+				</Box>
+				<Box title="Subdominant" position={{ x: 200, y: 50 }}>
+					<button>IV</button>
+					<button>ii</button>
+				</Box>
+				<Box title="Dominant" position={{ x: 100, y: 180 }}>
+					<button>V</button>
+					<button>vii</button>
+				</Box>
+			</div>
 			<div>- Use LilyPond / LilyBin / Hacklily to show the sheet music with download buttons</div>
 		</div>
   );

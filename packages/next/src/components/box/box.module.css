@@ -1,0 +1,13 @@
+.boxWrapper {
+	min-width: 300px;
+	min-height: 300px;
+	background: #e0e0e0;
+	position: relative;
+}
+
+.box {
+	position: absolute;
+	display: inline-block;
+	border: 1px solid grey;
+	padding: 0px 10px 10px 10px;
+}
